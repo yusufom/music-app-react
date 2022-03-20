@@ -1,9 +1,39 @@
 import React, { Component } from 'react'
+import "./css/SearchBar.css"
 
-export class SearchBar extends Component {
+class SearchBar extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       term: ""
+    };
+
+    this.handleTermChange = this.handleTermChange.bind(this);
+    this.search = this.search.bind(this);
+    this.handleEnter = this.handleEnter.bind(this)
+  }
+
+  handleTermChange(event){
+    this.setState({term:event.target.value});
+  }
+
+  search(){
+    this.props.onSearch(this.state.term);
+  }
+
+  handleEnter(event){
+    if(event.keyCode===13){
+      this.search();
+    }
+  }
   render() {
     return (
-      <div>SearchBar</div>
+      <div className="SearchBar">
+        <input placeholder="Enter song, album or artist" onChange={this.handleTermChange} onkeyUp={this.handleEnter}/>
+        <button className='SearchButton' onClick={this.search}>Search</button>
+      </div>
     )
   }
 }

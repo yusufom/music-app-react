@@ -2,6 +2,7 @@ import './App.css';
 import Playlist from "./components/Playlist.js";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
+import Spotify from "./components/utils"
 
 import React, { Component } from 'react';
 
