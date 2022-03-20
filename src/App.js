@@ -1,8 +1,9 @@
 import './App.css';
-import Playlist from "./components/Playlist.js";
+import Playlist from "./components/Playlist";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
-import Spotify from "./components/utils"
+import Spotify from "./util/Spotify"
+
 
 import React, { Component } from 'react';
 
