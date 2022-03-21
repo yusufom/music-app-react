@@ -4,10 +4,12 @@ import "./css/tracklist.css"
 import Track from "./Track"
 
 class Tracklist extends Component {
+  
   render() {
+    
     return (
       <div className='TrackList'>
-          {this.props.tracks.map(track => {
+          {this.props.tracks?.map(track => {
               return(
                   <Track 
                   track={track}
